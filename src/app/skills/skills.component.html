@@ -1,0 +1,56 @@
+
+
+<div class="skills-container">
+  <form [formGroup]='skillForm'>
+    <div class="flex-row-between">
+      <div class="form-field-content-chip">
+        <div style="width: 100%;">
+          <mat-chip-list #chipList1 aria-label="Fruit selection" class="chip-list-container">
+            <mat-chip style="margin: 20px;" *ngFor="let item of fruit">
+              <mat-icon class="chips-content" matChipAdd>add</mat-icon>
+              {{item}}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </div>
+    <h1 style="text-align: center;
+    margin: 29px;">Add Skills</h1>
+    <div class="flex-row-between">
+    
+      <div class="form-field-content-chip">
+        <mat-form-field style="width: 80%;">
+            <input matInput formControlName='posSearch' placeholder="search by typing soft">
+        </mat-form-field>
+      </div>
+      <div class="form-field-content-chip">
+        <div style="width: 100%;">
+            <mat-chip-list #chipList aria-label="Positions selection" class="chip-list-container">
+                <mat-chip style="margin: 20px;" *ngFor="let position of positions; let i = index;"
+                  (click)="selectPosition(i)">
+                  <mat-icon class="chips-content" *ngIf="!position.select">add</mat-icon>
+                  <mat-icon class="chips-content" style="background-color: #61b2d4 !important;" *ngIf="position.select">close</mat-icon>
+                  {{position.name}}
+                </mat-chip>
+              </mat-chip-list>
+        </div>
+      </div>
+    </div>
+    <h1>Professional Certifications</h1>
+    <label class="parastyle">describe your experience</label>
+    <div class="flex-row-between">
+      
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.</p>
+
+    </div>
+    <div style="text-align: center;">
+      <button mat-raised-button class="form-buttons3" (click)="previous()">Previous</button>
+      <button mat-raised-button class="form-buttons3" (click)="next()">Next</button>
+    </div>
+  </form>
+</div>

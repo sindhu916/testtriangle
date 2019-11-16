@@ -1,0 +1,104 @@
+
+.availability-container {
+  margin: 50px;
+  .flex-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .content-row {
+    h1 {
+      width: 40%;
+    }
+    .form-field-content {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.slider-width {
+  width: 50%;
+}
+
+.input-width-fixed {
+  width: 100px;
+}
+
+.dropdown-countries-sponsership {
+  background-color: white;
+  box-shadow: 0px 0px 3px 0px black;
+  width: 250px;
+  padding: 10px;
+  .countires-sponsorship {
+    display: grid;
+    position: absolute;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto 70px 50px;
+    width: 260px;
+    background-color: white;
+    border-top: 1px solid black;
+    box-shadow: 0px 2px 6px -2px black;
+    margin-top: 10px;
+    margin-left: -10px;
+    padding: 5px;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  .form-field-content-chip {
+    display: flex;
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.chips-content {
+  margin-left: -12px !important;
+  margin-right: 7px !important;
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 30px !important;
+  background-color: #1d1818 !important;
+  border-radius: 100% !important;
+  color: white !important;
+}
+
+.chip-list-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  div {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+.flex-row-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  p {
+    margin: 10px;
+  }
+  button {
+    margin: 10px;
+    background-color: black;
+    color: white;
+  }  
+}
+.form-buttons {
+  background-color: #61b2d4;
+  color: white;
+  margin: 15px;
+  width: 120px;
+}

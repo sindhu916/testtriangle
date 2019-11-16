@@ -1,0 +1,88 @@
+<div class="availability-container">
+    <form [formGroup]='availabilityForm'>
+      <div class="flex-row-between content-row">
+        <h1>Availability</h1>
+        <div class="form-field-content">
+          <mat-form-field style="width: 40%;">
+            <input matInput [matDatepicker]="picker1" placeholder="Start date" name="datepicker1" formControlName='datepicker1'>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field style="width: 40%;">
+            <input matInput [matDatepicker]="picker2" placeholder="End date" name="datepicker2" formControlName='datepicker2'>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="flex-row-between content-row">
+        <h1>Salary Expectation</h1>
+        <div class="form-field-content">
+          <mat-slider class="slider-width" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min" [step]="step"
+            [thumbLabel]="thumbLabel" [tickInterval]="tickInterval" [vertical]="vertical" name="salary-slider">
+          </mat-slider>
+          <mat-form-field class="input-width-fixed">
+            <input matInput placeholder="Daily rate" name="daily-rate" formControlName='dailyrate'>
+          </mat-form-field>
+          <mat-form-field class="input-width-fixed">
+            <input matInput placeholder="Hourly rate" name="hour-rate" formControlName='hourlyrate'>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="flex-row-between content-row">
+        <h1>Countries of Interest</h1>
+        <div class="form-field-content">
+          <mat-form-field style="width: 40%;">
+            <input matInput placeholder="Where would you like to work?" name="country-of-interest">
+          </mat-form-field>
+          <div class='dropdown-countries-sponsership'>
+            <div (click)='showDropDown()'>
+              <label>Visa or sponsorship required?</label>
+              <i></i>
+            </div>
+            <div *ngIf="showDropDownFlag" class="countires-sponsorship">
+              <label>Ireland</label>
+              <mat-checkbox>Yes</mat-checkbox>
+              <mat-checkbox>No</mat-checkbox>
+              <label>UK</label>
+              <mat-checkbox>Yes</mat-checkbox>
+              <mat-checkbox>No</mat-checkbox>
+              <label>India</label>
+              <mat-checkbox>Yes</mat-checkbox>
+              <mat-checkbox>No</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-column">
+        <h1>Preferred Positions</h1>
+        <div class="form-field-content-chip">
+          <mat-form-field style="width: 35%;">
+            <input matInput formControlName='posSearch' placeholder="search by typing soft">
+          </mat-form-field>
+          <div style="width: 100%;">
+            <mat-chip-list #chipList aria-label="Positions selection" class="chip-list-container">
+              <mat-chip style="margin: 20px;" *ngFor="let position of positions; let i = index;"
+                (click)="selectPosition(i)">
+                <mat-icon class="chips-content" *ngIf="!position.select">add</mat-icon>
+                <mat-icon class="chips-content" style="background-color: #61b2d4 !important;" *ngIf="position.select">close</mat-icon>
+                {{position.name}}
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+      </div>
+    <div class="flex-row-center">
+      <p>
+        Uploading your CV will increase your chance to be found by recruiter by 75%<br>
+        Supported formats: Docx, PDF maximum filesize 2mb
+      </p>
+      <mat-icon>cloud_upload</mat-icon>
+      <button mat-raised-button>Upload your CV</button>
+    </div>
+    <div style="text-align: center;">
+      <button mat-raised-button class="form-buttons" (click)="previous()">Previous</button>
+      <button mat-raised-button class="form-buttons" (click)="next()">Next</button>
+    </div>
+  </form>
+</div>

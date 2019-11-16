@@ -1,0 +1,36 @@
+
+.main-container {
+  width: 60%;
+  margin: auto;
+  padding-top: 70px;
+  
+border:1px solid wheat;
+  .user-tabs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    label {
+      background-color: #3a4c59;
+      color: white;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid white;
+    }
+  }
+}
+
+.active {
+  background-color: #61b2d4 !important;
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 32px solid #61b2d4;
+    position: absolute;
+    display: flex;
+    margin-left: 8%;
+  }
+}

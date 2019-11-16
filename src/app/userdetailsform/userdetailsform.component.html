@@ -1,0 +1,10 @@
+<section class="main-container">
+  <div class="user-tabs">
+    <label [ngClass]='showActive === "/home" ? "active": ""'>About</label>
+    <label [ngClass]='showActive === "/home/skills" ? "active": ""'>Skills</label>
+    <label [ngClass]='showActive === "/home/availability" ? "active": ""'>Availability</label>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</section>
